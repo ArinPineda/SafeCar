@@ -1,5 +1,4 @@
 import 'package:argon_flutter/constants/Theme.dart';
-import 'package:argon_flutter/widgets/drawer.dart';
 import 'package:argon_flutter/widgets/slider-product.dart';
 import 'package:flutter/material.dart';
 
@@ -55,7 +54,6 @@ class CarDataState extends State<CarData>{
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ArgonColors.bgColorScreen,
-      drawer: ArgonDrawer(currentPage: "CarData"),
       body: Container(
         padding: EdgeInsets.only(left: 24.0, right: 24.0),
         child: ListView(
@@ -179,29 +177,6 @@ class CarDataState extends State<CarData>{
                     Align(
                     alignment: Alignment.center,
                     child: Text("2020",
-                    style: TextStyle(fontSize: 18, color: ArgonColors.text)),
-                    ),
-                 ],
-              ),
-              SizedBox(height: 5),
-              Divider(
-                  height: 40.0,
-                  thickness: 1.5,
-                  indent: 32.0,
-                  endIndent: 32.0,
-              ),
-              SizedBox(height: 5),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                 children: <Widget>[
-                    Align(
-                    alignment: Alignment.center,
-                    child: Text("Marca:",
-                    style: TextStyle(fontSize: 26, color: ArgonColors.text)),
-                    ),
-                    Align(
-                    alignment: Alignment.center,
-                    child: Text("FORD",
                     style: TextStyle(fontSize: 18, color: ArgonColors.text)),
                     ),
                  ],

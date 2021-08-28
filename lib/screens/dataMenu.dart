@@ -3,8 +3,6 @@ import 'package:argon_flutter/screens/carData.dart';
 import 'package:argon_flutter/screens/messengerData.dart';
 import 'package:flutter/material.dart';
 
-import 'package:flutter/material.dart';
-
 
 class DataMenu extends StatefulWidget {
   @override

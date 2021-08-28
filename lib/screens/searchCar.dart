@@ -1,4 +1,4 @@
-import 'package:argon_flutter/widgets/drawer.dart';
+
 import 'package:argon_flutter/widgets/input.dart';
 import 'package:flutter/material.dart';
 import 'package:argon_flutter/constants/Theme.dart';
@@ -24,7 +24,6 @@ class SearchCarPageState extends State<SearchCar> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ArgonColors.bgColorScreen,
-      drawer: ArgonDrawer(currentPage: "SearchCar"),
       body: Container(
         padding: EdgeInsets.only(left: 24.0, right: 24.0),
         child: Form(

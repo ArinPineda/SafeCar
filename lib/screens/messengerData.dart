@@ -1,5 +1,4 @@
 import 'package:argon_flutter/constants/Theme.dart';
-import 'package:argon_flutter/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 
 class MessengerData extends StatefulWidget {
@@ -12,7 +11,6 @@ class MessengerDataState extends State<MessengerData> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ArgonColors.bgColorScreen,
-      drawer: ArgonDrawer(currentPage: "MessengerData"),
       body: Container(
         padding: EdgeInsets.only(left: 24.0, right: 24.0),
         child: ListView(

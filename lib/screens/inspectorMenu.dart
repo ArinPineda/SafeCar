@@ -1,3 +1,4 @@
+import 'package:argon_flutter/screens/getCarData.dart';
 import 'package:argon_flutter/screens/searchCar.dart';
 import 'package:flutter/material.dart';
 import 'package:argon_flutter/constants/Theme.dart';
@@ -10,7 +11,7 @@ class InspectorMenu extends StatefulWidget {
 class InspectorMenuState extends State<InspectorMenu> {
   int _selectIndex = 0;
   List<Widget> _widgetsOptions = [
-    SearchCar(),
+    GetCarData(),
     SearchCar()
   ];
 

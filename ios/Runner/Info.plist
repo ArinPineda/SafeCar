@@ -41,5 +41,12 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<!--Image Picker -->
+	<key>NSPhotoLibraryUsageDescription</key>
+	<String>Need to upload image</string>
+	<key>NSCameraUsageDescription</key>
+	<String>Need to upload image</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<String>Need to upload image</string>
 </dict>
 </plist>

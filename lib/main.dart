@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Argon PRO Flutter',
+        title: 'SEIDA',
         theme: ThemeData(fontFamily: 'OpenSans'),
         initialRoute: "/logins",
         debugShowCheckedModeBanner: false,
@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
           "/profile": (BuildContext context) => new Profile(),
           "/articles": (BuildContext context) => new Articles(),
           "/elements": (BuildContext context) => new Elements(),
+
           "/loginInspector": (BuildContext context) => new LoginInspector(),
           "/logins": (BuildContext context) => new LoginsPage(),
           "/searchCar": (BuildContext context) => new SearchCar(),

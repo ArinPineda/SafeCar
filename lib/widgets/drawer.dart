@@ -115,6 +115,15 @@ class ArgonDrawer extends StatelessWidget {
                   iconColor: ArgonColors.primary,
                   title: "Articles",
                   isSelected: currentPage == "Articles" ? true : false),
+              DrawerTile(
+                  icon: Icons.apps,
+                  onTap: () {
+                    if (currentPage != "GetCarData")
+                      Navigator.pushReplacementNamed(context, '/getCarData');
+                  },
+                  iconColor: ArgonColors.primary,
+                  title: "GetCarData",
+                  isSelected: currentPage == "GetCarData" ? true : false),
             ],
           ),
         ),
