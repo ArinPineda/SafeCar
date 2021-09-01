@@ -14,6 +14,10 @@ import 'package:argon_flutter/screens/loginInspector.dart';
 import 'package:argon_flutter/screens/articles.dart';
 import 'package:argon_flutter/screens/elements.dart';
 
+import 'package:argon_flutter/screens/loginCliente.dart';
+
+import 'package:argon_flutter/screens/information.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -30,13 +34,14 @@ class MyApp extends StatelessWidget {
           "/profile": (BuildContext context) => new Profile(),
           "/articles": (BuildContext context) => new Articles(),
           "/elements": (BuildContext context) => new Elements(),
-
           "/loginInspector": (BuildContext context) => new LoginInspector(),
+          "/loginCliente": (BuildContext context) => new LoginCliente(),
           "/logins": (BuildContext context) => new LoginsPage(),
           "/searchCar": (BuildContext context) => new SearchCar(),
           "/inspectorMenu": (BuildContext context) => new InspectorMenu(),
           "/dataMenu": (BuildContext context) => new DataMenu(),
           "/carData": (BuildContext context) => new CarData(),
+          "/information": (BuildContext context) => new Information(),
           "/messengerData": (BuildContext context) => new MessengerData()
         });
   }
