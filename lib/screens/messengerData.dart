@@ -81,12 +81,12 @@ class MessengerDataState extends State<MessengerData> {
                  children: <Widget>[
                     Align(
                     alignment: Alignment.center,
-                    child: Text("Fecha de nacimiento:",
+                    child: Text("Tipo de identificación:",
                     style: TextStyle(fontSize: 26, color: ArgonColors.text)),
                     ),
                     Align(
                     alignment: Alignment.center,
-                    child: Text("23-JUNIO-1999",
+                    child: Text("Cedula de ciudadania",
                     style: TextStyle(fontSize: 18, color: ArgonColors.text)),
                     ),
                  ],

@@ -148,12 +148,12 @@ class CarDataState extends State<CarData>{
                  children: <Widget>[
                     Align(
                     alignment: Alignment.center,
-                    child: Text("Color:",
+                    child: Text("Línea:",
                     style: TextStyle(fontSize: 26, color: ArgonColors.text)),
                     ),
                     Align(
                     alignment: Alignment.center,
-                    child: Text("Rojo",
+                    child: Text("FUSION",
                     style: TextStyle(fontSize: 18, color: ArgonColors.text)),
                     ),
                  ],
@@ -177,28 +177,6 @@ class CarDataState extends State<CarData>{
                     Align(
                     alignment: Alignment.center,
                     child: Text("2020",
-                    style: TextStyle(fontSize: 18, color: ArgonColors.text)),
-                    ),
-                 ],
-              ),
-              SizedBox(height: 5),
-              Divider(
-                  height: 40.0,
-                  thickness: 1.5,
-                  indent: 32.0,
-                  endIndent: 32.0,
-              ),
-              SizedBox(height: 5),
-              Column(
-                 children: <Widget>[
-                    Align(
-                    alignment: Alignment.center,
-                    child: Text("Propietario:",
-                    style: TextStyle(fontSize: 26, color: ArgonColors.text)),
-                    ),
-                    Align(
-                    alignment: Alignment.center,
-                    child: Text("Carlos Mario Manchego Pabón",
                     style: TextStyle(fontSize: 18, color: ArgonColors.text)),
                     ),
                  ],

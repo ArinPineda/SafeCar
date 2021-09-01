@@ -1,5 +1,7 @@
 import 'package:argon_flutter/screens/getCarData.dart';
+import 'package:argon_flutter/screens/lostKey.dart';
 import 'package:argon_flutter/screens/searchCar.dart';
+import 'package:argon_flutter/widgets/navbar.dart';
 import 'package:flutter/material.dart';
 import 'package:argon_flutter/constants/Theme.dart';
 
@@ -12,7 +14,8 @@ class InspectorMenuState extends State<InspectorMenu> {
   int _selectIndex = 0;
   List<Widget> _widgetsOptions = [
     GetCarData(),
-    SearchCar()
+    SearchCar(),
+    LostKey()
   ];
 
   void _itemTapped(int index) {
@@ -21,29 +24,11 @@ class InspectorMenuState extends State<InspectorMenu> {
     });
   }
 
-  void _goLogins(BuildContext context) {
-    Navigator.pushNamedAndRemoveUntil(context, "/logins", (route) => false);
-  }
-
-  Future<void> _singOut() async {
-    _goLogins(context);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-        title: Text("SEIDA"),
-        backgroundColor: ArgonColors.primary,
-        actions: <Widget>[
-          Builder(builder: (BuildContext context){
-            return IconButton(
-              onPressed: () async{
-                await _singOut();
-              }, 
-              icon: Icon(Icons.keyboard_tab_outlined));
-          })
-        ],
+      appBar: Navbar(
+        title: "SEIDA",
       ),
       body: _widgetsOptions[_selectIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -54,7 +39,11 @@ class InspectorMenuState extends State<InspectorMenu> {
               backgroundColor: ArgonColors.primary),
           BottomNavigationBarItem(
               icon: Icon(Icons.search_rounded),
-              label: 'Inspeccionar Vehiculo',
+              label: 'Buscar Vehiculo',
+              backgroundColor: ArgonColors.primary),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.cancel_sharp),
+              label: 'Deshabilitar llave',
               backgroundColor: ArgonColors.primary),
         ],
         backgroundColor: ArgonColors.primary,

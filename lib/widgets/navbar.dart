@@ -96,23 +96,6 @@ class _NavbarState extends State<Navbar> {
                   children: [
                     Row(
                       children: [
-                        IconButton(
-                            icon: Icon(
-                                !widget.backButton
-                                    ? Icons.menu
-                                    : Icons.arrow_back_ios,
-                                color: !widget.transparent
-                                    ? (widget.bgColor == ArgonColors.white
-                                        ? ArgonColors.initial
-                                        : ArgonColors.white)
-                                    : ArgonColors.white,
-                                size: 24.0),
-                            onPressed: () {
-                              if (!widget.backButton)
-                                Scaffold.of(context).openDrawer();
-                              else
-                                Navigator.pop(context);
-                            }),
                         Text(widget.title,
                             style: TextStyle(
                                 color: !widget.transparent
@@ -130,24 +113,10 @@ class _NavbarState extends State<Navbar> {
                         children: [
                           GestureDetector(
                             onTap: () {
-                              Navigator.pushNamed(context, '/pro');
+                              Navigator.pushNamed(context, '/logins');
                             },
                             child: IconButton(
-                                icon: Icon(Icons.notifications_active,
-                                    color: !widget.transparent
-                                        ? (widget.bgColor == ArgonColors.white
-                                            ? ArgonColors.initial
-                                            : ArgonColors.white)
-                                        : ArgonColors.white,
-                                    size: 22.0),
-                                onPressed: null),
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.pushNamed(context, '/pro');
-                            },
-                            child: IconButton(
-                                icon: Icon(Icons.shopping_basket,
+                                icon: Icon(Icons.keyboard_tab_outlined,
                                     color: !widget.transparent
                                         ? (widget.bgColor == ArgonColors.white
                                             ? ArgonColors.initial

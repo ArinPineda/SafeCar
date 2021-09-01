@@ -214,8 +214,8 @@ class GetCarDataState extends State<GetCarData>{
               Padding(
                 padding: const EdgeInsets.only(top: 16.0),
                 child: Input(
-                  placeholder: "Fecha de nacimiento",
-                  prefixIcon: Icon(Icons.calendar_today_rounded),
+                  placeholder: "Tipo de identificación",
+                  prefixIcon: Icon(Icons.content_paste),
                 ),
               ), 
               SizedBox(height: 1),
@@ -273,16 +273,8 @@ class GetCarDataState extends State<GetCarData>{
               Padding(
                 padding: const EdgeInsets.only(top: 16.0),
                 child: Input(
-                  placeholder: "Marca",
+                  placeholder: "Linea",
                   prefixIcon: Icon(Icons.poll_rounded),
-                ),
-              ), 
-              SizedBox(height: 15),       
-              Padding(
-                padding: const EdgeInsets.only(top: 16.0),
-                child: Input(
-                  placeholder: "Color",
-                  prefixIcon: Icon(Icons.format_paint_rounded),
                 ),
               ), 
               SizedBox(height: 15),       
@@ -297,15 +289,15 @@ class GetCarDataState extends State<GetCarData>{
               Padding(
                 padding: const EdgeInsets.only(top: 16.0),
                 child: Input(
-                  placeholder: "Propietario",
-                  prefixIcon: Icon(Icons.portrait_rounded),
+                  placeholder: "Identificación",
+                  prefixIcon: Icon(Icons.badge_rounded),
                 ),
               ), 
-              SizedBox(height: 15),       
+              SizedBox(height: 15),
               Padding(
                 padding: const EdgeInsets.only(top: 16.0),
                 child: Input(
-                  placeholder: "Identificación",
+                  placeholder: "RFID llave",
                   prefixIcon: Icon(Icons.badge_rounded),
                 ),
               ), 
