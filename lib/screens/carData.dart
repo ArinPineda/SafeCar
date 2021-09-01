@@ -193,7 +193,7 @@ class CarDataState extends State<CarData>{
                  children: <Widget>[
                     Align(
                     alignment: Alignment.center,
-                    child: Text("Identificación:",
+                    child: Text("Número de identificación del propietario:",
                     style: TextStyle(fontSize: 26, color: ArgonColors.text)),
                     ),
                     Align(
