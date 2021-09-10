@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:argon_flutter/constants/Theme.dart';
 import 'package:argon_flutter/widgets/input.dart';
+import 'package:argon_flutter/widgets/navbar.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:qrscan/qrscan.dart';
@@ -161,18 +162,8 @@ class InformationState extends State<Information> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("SEIDA"),
-        backgroundColor: ArgonColors.primary,
-        actions: <Widget>[
-          Builder(builder: (BuildContext context) {
-            return IconButton(
-                onPressed: () async {
-                  await _singOut();
-                },
-                icon: Icon(Icons.keyboard_tab_outlined));
-          })
-        ],
+      appBar: Navbar(
+        title: "SEIDA",
       ),
       backgroundColor: ArgonColors.bgColorScreen,
       body: Container(
@@ -189,7 +180,7 @@ class InformationState extends State<Information> {
                 children: [
                   Align(
                     alignment: Alignment.center,
-                    child: Text("Escanear QR",
+                    child: Text("Datos de",
                         style:
                             TextStyle(fontSize: 30, color: ArgonColors.text)),
                   ),
@@ -198,11 +189,6 @@ class InformationState extends State<Information> {
                     child: Text("Cedula de ciudadania",
                         style:
                             TextStyle(fontSize: 24, color: ArgonColors.text)),
-                  ),
-                  FlatButton(
-                    onPressed: _scan,
-                    child: Icon(Icons.aspect_ratio_rounded),
-                    color: ArgonColors.primary,
                   ),
                 ],
               ),
@@ -229,14 +215,14 @@ class InformationState extends State<Information> {
                   // prefixIcon: Icon(Icons.badge_rounded),
                 ),
               ),
-              SizedBox(height: 15),
+              SizedBox(height: 15),       
               Padding(
                 padding: const EdgeInsets.only(top: 16.0),
                 child: Input(
-                  placeholder: "Fecha de nacimiento",
-                  prefixIcon: Icon(Icons.calendar_today_rounded),
+                  placeholder: "Tipo de identificación",
+                  prefixIcon: Icon(Icons.content_paste),
                 ),
-              ),
+              ), 
               SizedBox(height: 1),
               Divider(
                 height: 40.0,
@@ -250,7 +236,7 @@ class InformationState extends State<Information> {
                 children: [
                   Align(
                     alignment: Alignment.center,
-                    child: Text("Escanear QR",
+                    child: Text("Datos de",
                         style:
                             TextStyle(fontSize: 30, color: ArgonColors.text)),
                   ),
@@ -259,11 +245,6 @@ class InformationState extends State<Information> {
                     child: Text("Tarjeta de propiedad",
                         style:
                             TextStyle(fontSize: 24, color: ArgonColors.text)),
-                  ),
-                  FlatButton(
-                    onPressed: _scan,
-                    child: Icon(Icons.aspect_ratio_rounded),
-                    color: ArgonColors.primary,
                   ),
                 ],
               ),
@@ -294,16 +275,8 @@ class InformationState extends State<Information> {
               Padding(
                 padding: const EdgeInsets.only(top: 16.0),
                 child: Input(
-                  placeholder: "Marca",
+                  placeholder: "Línea",
                   prefixIcon: Icon(Icons.poll_rounded),
-                ),
-              ),
-              SizedBox(height: 15),
-              Padding(
-                padding: const EdgeInsets.only(top: 16.0),
-                child: Input(
-                  placeholder: "Color",
-                  prefixIcon: Icon(Icons.format_paint_rounded),
                 ),
               ),
               SizedBox(height: 15),

@@ -172,18 +172,13 @@ class GetCarDataState extends State<GetCarData>{
                 children: [
                   Align(
                     alignment: Alignment.center,
-                    child: Text("Escanear QR",
+                    child: Text("Datos de",
                     style: TextStyle(fontSize: 30, color: ArgonColors.text)),
                   ),
                   Align(
                     alignment: Alignment.center,
                     child: Text("Cedula de ciudadania",
                     style: TextStyle(fontSize: 24, color: ArgonColors.text)),
-                  ),
-                  FlatButton(
-                    onPressed: _scan,
-                    child: Icon(Icons.aspect_ratio_rounded),
-                    color: ArgonColors.primary,
                   ),
                 ],
               ),
@@ -231,19 +226,14 @@ class GetCarDataState extends State<GetCarData>{
                 children: [
                   Align(
                     alignment: Alignment.center,
-                    child: Text("Escanear QR",
+                    child: Text("Datos de",
                     style: TextStyle(fontSize: 30, color: ArgonColors.text)),
                   ),
                   Align(
                     alignment: Alignment.center,
                     child: Text("Tarjeta de propiedad",
                     style: TextStyle(fontSize: 24, color: ArgonColors.text)),
-                  ),
-                  FlatButton(
-                    onPressed: _scan,
-                    child: Icon(Icons.aspect_ratio_rounded),
-                    color: ArgonColors.primary,
-                  ),
+                  )
                 ],
               ),
               SizedBox(height: 1),

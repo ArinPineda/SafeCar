@@ -125,29 +125,6 @@ class CarDataState extends State<CarData>{
                  children: <Widget>[
                     Align(
                     alignment: Alignment.center,
-                    child: Text("Marca:",
-                    style: TextStyle(fontSize: 26, color: ArgonColors.text)),
-                    ),
-                    Align(
-                    alignment: Alignment.center,
-                    child: Text("FORD",
-                    style: TextStyle(fontSize: 18, color: ArgonColors.text)),
-                    ),
-                 ],
-              ),
-              SizedBox(height: 5),
-              Divider(
-                  height: 40.0,
-                  thickness: 1.5,
-                  indent: 32.0,
-                  endIndent: 32.0,
-              ),
-              SizedBox(height: 5),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                 children: <Widget>[
-                    Align(
-                    alignment: Alignment.center,
                     child: Text("Línea:",
                     style: TextStyle(fontSize: 26, color: ArgonColors.text)),
                     ),

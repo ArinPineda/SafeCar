@@ -1,3 +1,4 @@
+import 'package:argon_flutter/screens/loginCliente.dart';
 import 'package:argon_flutter/screens/loginInspector.dart';
 import 'package:flutter/material.dart';
 import 'package:argon_flutter/constants/Theme.dart';
@@ -11,7 +12,7 @@ class LoginsPageState extends State<LoginsPage> {
   int _selectIndex = 0;
   List<Widget> _widgetsOptions = [
     LoginInspector(),
-    LoginInspector()
+    LoginCliente()
   ];
 
   void _itemTapped(int index) {
@@ -35,7 +36,7 @@ class LoginsPageState extends State<LoginsPage> {
               backgroundColor: ArgonColors.primary),
         ],
         currentIndex: _selectIndex,
-        selectedItemColor: ArgonColors.success,
+        selectedItemColor: ArgonColors.primary,
         onTap: _itemTapped,
       ),
     );

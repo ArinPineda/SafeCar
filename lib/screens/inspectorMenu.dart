@@ -48,7 +48,7 @@ class InspectorMenuState extends State<InspectorMenu> {
         ],
         backgroundColor: ArgonColors.primary,
         currentIndex: _selectIndex,
-        selectedItemColor: ArgonColors.success,
+        selectedItemColor: ArgonColors.white,
         onTap: _itemTapped,
       ),
     );
