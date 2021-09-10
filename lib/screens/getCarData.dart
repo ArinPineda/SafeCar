@@ -154,6 +154,47 @@ class GetCarDataState extends State<GetCarData>{
     }
   }
 
+  void _showModal(String type) {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            ListTile(
+              leading: new Icon(Icons.badge_sharp),
+              title: new Text('Escanear documento de identidad'),
+              onTap: () {
+                Navigator.pop(context);
+                if (type == "informacion") {
+                  _getIDdocument();
+                } 
+              },
+            ),
+            ListTile(
+              leading: new Icon(Icons.source_sharp),
+              title: new Text('Escanear tarjeta de propiedad'),
+              onTap: () {
+                Navigator.pop(context);
+                if (type == "informacion") {
+                  _getPropietyCard();
+                } 
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _getIDdocument() async{
+    _scan();
+  }
+
+  void _getPropietyCard() async{
+    _scan();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -167,6 +208,18 @@ class GetCarDataState extends State<GetCarData>{
              padding: EdgeInsets.all(20),
              children: <Widget>[
               SizedBox(height: 15),
+              FloatingActionButton.extended(
+                onPressed: () => _showModal("informacion"), 
+                label: Text("Escanear información"),
+                icon: Icon(Icons.camera),
+                ),
+              SizedBox(height: 1),
+              Divider(
+                height: 40.0,
+                thickness: 1.5,
+                indent: 32.0,
+                endIndent: 32.0,
+              ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
