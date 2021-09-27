@@ -27,7 +27,6 @@ class MyApp extends StatelessWidget {
           "/loginInspector": (BuildContext context) => new LoginInspector(),
           "/loginCliente": (BuildContext context) => new LoginCliente(),
           "/logins": (BuildContext context) => new LoginsPage(),
-          "/searchCar": (BuildContext context) => new SearchCar(),
           "/inspectorMenu": (BuildContext context) => new InspectorMenu(),
           "/dataMenu": (BuildContext context) => new DataMenu(),
           "/carData": (BuildContext context) => new CarData(),
@@ -36,3 +35,4 @@ class MyApp extends StatelessWidget {
         });
   }
 }
+

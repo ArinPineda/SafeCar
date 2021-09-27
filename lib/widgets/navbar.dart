@@ -134,14 +134,14 @@ class _NavbarState extends State<Navbar> {
                     padding: const EdgeInsets.only(
                         top: 8, bottom: 4, left: 15, right: 15),
                     child: Input(
-                        placeholder: "What are you looking for?",
+                        placeholder: "Buscar por placa",
                         controller: widget.searchController,
                         onChanged: widget.searchOnChanged,
                         autofocus: widget.searchAutofocus,
                         suffixIcon:
                             Icon(Icons.zoom_in, color: ArgonColors.muted),
                         onTap: () {
-                          Navigator.pushNamed(context, '/pro');
+                          Navigator.pushNamed(context, '/dataMenu');
                         }),
                   ),
                 SizedBox(

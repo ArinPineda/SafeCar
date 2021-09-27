@@ -23,13 +23,7 @@ class DataMenuState extends State<DataMenu> {
     });
   }
 
-  void _goInspectorMenu(BuildContext context) {
-    Navigator.pushNamedAndRemoveUntil(context, "/inspectorMenu", (route) => false);
-  }
-
-  Future<void> _goBack() async {
-    _goInspectorMenu(context);
-  }
+  
 
   @override
   Widget build(BuildContext context) {
@@ -37,15 +31,6 @@ class DataMenuState extends State<DataMenu> {
       appBar: AppBar(
         title: Text("Datos"),
         backgroundColor: ArgonColors.primary,
-        actions: <Widget>[
-          Builder(builder: (BuildContext context){
-            return IconButton(
-              onPressed: () async{
-                await _goBack();
-              }, 
-              icon: Icon(Icons.keyboard_tab_outlined));
-          })
-        ],
       ),
       body: _widgetsOptions[_selectIndex],
       bottomNavigationBar: BottomNavigationBar(

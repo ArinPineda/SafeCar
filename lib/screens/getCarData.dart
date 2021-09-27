@@ -15,6 +15,7 @@ class GetCarData extends StatefulWidget {
 class GetCarDataState extends State<GetCarData>{
   
   final _formKey = GlobalKey<FormState>();
+  final _searchKey = GlobalKey<FormState>();
 
   TextEditingController _genericBarcode;
 
@@ -27,19 +28,6 @@ class GetCarDataState extends State<GetCarData>{
 
   File _imageKeyPick1 = null;
   File _imageKeyPick2 = null;
-
-  Future _scan() async {
-    var _cameraPermission = await Permission.camera.status;
-    if(!_cameraPermission.isGranted){
-      await Permission.camera.request();
-    }
-
-    if(_cameraPermission.isGranted){
-      String _BarCode = await scan();
-      this._genericBarcode.text = _BarCode;
-    }
-    
-  }
  
   void _getImageCar1() async {
     var _cameraPermission = await Permission.camera.status;
@@ -154,47 +142,6 @@ class GetCarDataState extends State<GetCarData>{
     }
   }
 
-  void _showModal(String type) {
-    showModalBottomSheet(
-      context: context,
-      builder: (context) {
-        return Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            ListTile(
-              leading: new Icon(Icons.badge_sharp),
-              title: new Text('Escanear documento de identidad'),
-              onTap: () {
-                Navigator.pop(context);
-                if (type == "informacion") {
-                  _getIDdocument();
-                } 
-              },
-            ),
-            ListTile(
-              leading: new Icon(Icons.source_sharp),
-              title: new Text('Escanear tarjeta de propiedad'),
-              onTap: () {
-                Navigator.pop(context);
-                if (type == "informacion") {
-                  _getPropietyCard();
-                } 
-              },
-            ),
-          ],
-        );
-      },
-    );
-  }
-
-  void _getIDdocument() async{
-    _scan();
-  }
-
-  void _getPropietyCard() async{
-    _scan();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -207,22 +154,10 @@ class GetCarDataState extends State<GetCarData>{
            child: ListView(
              padding: EdgeInsets.all(20),
              children: <Widget>[
-              SizedBox(height: 15),
-              FloatingActionButton.extended(
-                onPressed: () => _showModal("informacion"), 
-                label: Text("Escanear información"),
-                icon: Icon(Icons.camera),
-                ),
-              SizedBox(height: 1),
-              Divider(
-                height: 40.0,
-                thickness: 1.5,
-                indent: 32.0,
-                endIndent: 32.0,
-              ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
+                  SizedBox(height: 1),
                   Align(
                     alignment: Alignment.center,
                     child: Text("Datos de",
