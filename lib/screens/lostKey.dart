@@ -12,8 +12,7 @@ class LostKey extends StatefulWidget {
   LostKeyState createState() => LostKeyState();
 }
 
-class LostKeyState extends State<LostKey>{
-
+class LostKeyState extends State<LostKey> {
   TextEditingController _disableDate;
   String _disableReasonSelected = 'Perdida de la llave';
   List _disableReason = [
@@ -65,99 +64,98 @@ class LostKeyState extends State<LostKey>{
     return Stack(
       children: [
         new Form(
-          key: _formKey,
-          autovalidateMode: AutovalidateMode.disabled,
-          child: ListView(
-            padding: EdgeInsets.all(20),
-            children: <Widget>[
-              SizedBox(height: 15),
-              Align(
-                alignment: Alignment.center,
-                child: Text("Resportar llave perdida",
-                    style: TextStyle(fontSize: 30, color: ArgonColors.text)),
-              ),
-              SizedBox(height: 15),       
-              Padding(
-                padding: const EdgeInsets.only(top: 16.0),
-                child: Input(
-                  placeholder: "RFID llave",
-                  controller: _RFIDKey,
-                  prefixIcon: Icon(Icons.car_rental),
+            key: _formKey,
+            autovalidateMode: AutovalidateMode.disabled,
+            child: ListView(
+              padding: EdgeInsets.all(20),
+              children: <Widget>[
+                SizedBox(height: 15),
+                Align(
+                  alignment: Alignment.center,
+                  child: Text("Resportar llave perdida",
+                      style: TextStyle(fontSize: 30, color: ArgonColors.text)),
                 ),
-              ),
-              SizedBox(height: 15),       
-              Padding(
-                padding: const EdgeInsets.only(top: 16.0),
-                child: Input(
-                  placeholder: "Fecha de perdida",
-                  prefixIcon: Icon(Icons.calendar_today_outlined),
-                  controller: _lostDate,
-                  onTap: CallLostDatePicker,
-                ),
-              ), 
-              SizedBox(height: 15),       
-              Padding(
-                padding: const EdgeInsets.only(top: 16.0),
-                child: Input(
-                  placeholder: "Fecha de deshabilitación",
-                  prefixIcon: Icon(Icons.calendar_today_outlined),
-                  controller: _disableDate,
-                  onTap: CallDisableDatePicker,
-                ),
-              ),
-              SizedBox(height: 15),
-              Container(
-                child: DropdownButtonFormField<String>(
-                  hint: Text('Razon de deshabilitación'),
-                  decoration: InputDecoration(
-                    errorMaxLines: 2,
-                    labelStyle: TextStyle(color: ArgonColors.black),
-                    contentPadding: const EdgeInsets.only(top: 16.0),
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Theme.of(context).focusColor.withOpacity(0.2),
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Theme.of(context).focusColor.withOpacity(0.5),
-                      ),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: ArgonColors.primary,
-                      ),
-                    ),
+                SizedBox(height: 15),
+                Padding(
+                  padding: const EdgeInsets.only(top: 16.0),
+                  child: Input(
+                    placeholder: "RFID llave",
+                    controller: _RFIDKey,
+                    prefixIcon: Icon(Icons.car_rental),
                   ),
-                  value: _disableReasonSelected,
-                  icon: const Icon(Icons.arrow_downward),
-                  iconSize: 24,
-                  elevation: 16,
-                  style: const TextStyle(color: ArgonColors.black),
-                  onChanged: (String newValue) {
-                    setState(() {
-                      _disableReasonSelected = newValue;
-                    });
-                  },
-                  items: _disableReason.map<DropdownMenuItem<String>>((value) {
-                    return DropdownMenuItem<String>(
-                      value: value,
-                      child: Text(value),
-                    );
-                  }).toList(),
                 ),
-              ),
-              SizedBox(height: 15),      
-              FlatButton(
-                    onPressed:  () {},
-                    child: Text("Aceptar"),
-                    color: ArgonColors.primary,
+                SizedBox(height: 15),
+                Padding(
+                  padding: const EdgeInsets.only(top: 16.0),
+                  child: Input(
+                    placeholder: "Fecha de perdida",
+                    prefixIcon: Icon(Icons.calendar_today_outlined),
+                    controller: _lostDate,
+                    onTap: CallLostDatePicker,
                   ),
-            ],
-          )
-          )
+                ),
+                SizedBox(height: 15),
+                Padding(
+                  padding: const EdgeInsets.only(top: 16.0),
+                  child: Input(
+                    placeholder: "Fecha de deshabilitación",
+                    prefixIcon: Icon(Icons.calendar_today_outlined),
+                    controller: _disableDate,
+                    onTap: CallDisableDatePicker,
+                  ),
+                ),
+                SizedBox(height: 15),
+                Container(
+                  child: DropdownButtonFormField<String>(
+                    hint: Text('Razon de deshabilitación'),
+                    decoration: InputDecoration(
+                      errorMaxLines: 2,
+                      labelStyle: TextStyle(color: ArgonColors.black),
+                      contentPadding: const EdgeInsets.only(top: 16.0),
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Theme.of(context).focusColor.withOpacity(0.2),
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Theme.of(context).focusColor.withOpacity(0.5),
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: ArgonColors.primary,
+                        ),
+                      ),
+                    ),
+                    value: _disableReasonSelected,
+                    icon: const Icon(Icons.arrow_downward),
+                    iconSize: 24,
+                    elevation: 16,
+                    style: const TextStyle(color: ArgonColors.black),
+                    onChanged: (String newValue) {
+                      setState(() {
+                        _disableReasonSelected = newValue;
+                      });
+                    },
+                    items:
+                        _disableReason.map<DropdownMenuItem<String>>((value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                  ),
+                ),
+                SizedBox(height: 15),
+                FlatButton(
+                  onPressed: () {},
+                  child: Text("Aceptar"),
+                  color: ArgonColors.primary,
+                ),
+              ],
+            ))
       ],
     );
   }
-
 }

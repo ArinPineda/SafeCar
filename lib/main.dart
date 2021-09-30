@@ -4,7 +4,6 @@ import 'package:argon_flutter/screens/dataMenu.dart';
 import 'package:argon_flutter/screens/inspectorMenu.dart';
 import 'package:argon_flutter/screens/logins.dart';
 import 'package:argon_flutter/screens/messengerData.dart';
-import 'package:argon_flutter/screens/searchCar.dart';
 import 'package:flutter/material.dart';
 import 'package:argon_flutter/screens/loginInspector.dart';
 

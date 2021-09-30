@@ -3,27 +3,20 @@ import 'package:argon_flutter/screens/carData.dart';
 import 'package:argon_flutter/screens/messengerData.dart';
 import 'package:flutter/material.dart';
 
-
 class DataMenu extends StatefulWidget {
   @override
   DataMenuState createState() => DataMenuState();
 }
 
 class DataMenuState extends State<DataMenu> {
-
   int _selectIndex = 0;
-  List<Widget> _widgetsOptions = [
-    CarData(),
-    MessengerData()
-  ];
+  List<Widget> _widgetsOptions = [CarData(), MessengerData()];
 
   void _itemTapped(int index) {
     setState(() {
       _selectIndex = index;
     });
   }
-
-  
 
   @override
   Widget build(BuildContext context) {
@@ -49,6 +42,6 @@ class DataMenuState extends State<DataMenu> {
         selectedItemColor: ArgonColors.success,
         onTap: _itemTapped,
       ),
-    ); 
+    );
   }
 }

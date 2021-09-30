@@ -11,13 +11,18 @@ class GetCarData extends StatefulWidget {
   GetCarDataState createState() => GetCarDataState();
 }
 
-
-class GetCarDataState extends State<GetCarData>{
-  
+class GetCarDataState extends State<GetCarData> {
   final _formKey = GlobalKey<FormState>();
   final _searchKey = GlobalKey<FormState>();
 
-  TextEditingController _genericBarcode;
+  TextEditingController _name;
+  TextEditingController _ID;
+  TextEditingController _IDType;
+  TextEditingController _placa;
+  TextEditingController _VIN;
+  TextEditingController _line;
+  TextEditingController _model;
+  TextEditingController _IDcard;
 
   File _imageCarPick1 = null;
   File _imageCarPick2 = null;
@@ -28,117 +33,116 @@ class GetCarDataState extends State<GetCarData>{
 
   File _imageKeyPick1 = null;
   File _imageKeyPick2 = null;
- 
+
   void _getImageCar1() async {
     var _cameraPermission = await Permission.camera.status;
-    if(!_cameraPermission.isGranted){
+    if (!_cameraPermission.isGranted) {
       await Permission.camera.request();
     }
 
-    if(_cameraPermission.isGranted){
+    if (_cameraPermission.isGranted) {
       var _imageCar = await ImagePicker.pickImage(source: ImageSource.camera);
-    setState(() {
+      setState(() {
         _imageCarPick1 = _imageCar;
-    });
+      });
     }
-    
   }
 
   void _getImageCar2() async {
     var _cameraPermission = await Permission.camera.status;
-    if(!_cameraPermission.isGranted){
+    if (!_cameraPermission.isGranted) {
       await Permission.camera.request();
     }
 
-    if(_cameraPermission.isGranted){
+    if (_cameraPermission.isGranted) {
       var _imageCar = await ImagePicker.pickImage(source: ImageSource.camera);
-    setState(() {
+      setState(() {
         _imageCarPick2 = _imageCar;
-    });
+      });
     }
   }
 
   void _getImageCar3() async {
     var _cameraPermission = await Permission.camera.status;
-    if(!_cameraPermission.isGranted){
+    if (!_cameraPermission.isGranted) {
       await Permission.camera.request();
     }
 
-    if(_cameraPermission.isGranted){
+    if (_cameraPermission.isGranted) {
       var _imageCar = await ImagePicker.pickImage(source: ImageSource.camera);
-    setState(() {
+      setState(() {
         _imageCarPick3 = _imageCar;
-    });
+      });
     }
   }
 
   void _getImageCar4() async {
     var _cameraPermission = await Permission.camera.status;
-    if(!_cameraPermission.isGranted){
+    if (!_cameraPermission.isGranted) {
       await Permission.camera.request();
     }
 
-    if(_cameraPermission.isGranted){
+    if (_cameraPermission.isGranted) {
       var _imageCar = await ImagePicker.pickImage(source: ImageSource.camera);
-    setState(() {
+      setState(() {
         _imageCarPick4 = _imageCar;
-    });
+      });
     }
   }
 
   void _getImageCar5() async {
     var _cameraPermission = await Permission.camera.status;
-    if(!_cameraPermission.isGranted){
+    if (!_cameraPermission.isGranted) {
       await Permission.camera.request();
     }
 
-    if(_cameraPermission.isGranted){
+    if (_cameraPermission.isGranted) {
       var _imageCar = await ImagePicker.pickImage(source: ImageSource.camera);
-    setState(() {
+      setState(() {
         _imageCarPick5 = _imageCar;
-    });
+      });
     }
   }
 
   void _getImageCar6() async {
     var _cameraPermission = await Permission.camera.status;
-    if(!_cameraPermission.isGranted){
+    if (!_cameraPermission.isGranted) {
       await Permission.camera.request();
     }
 
-    if(_cameraPermission.isGranted){
+    if (_cameraPermission.isGranted) {
       var _imageCar = await ImagePicker.pickImage(source: ImageSource.camera);
-    setState(() {
+      setState(() {
         _imageCarPick6 = _imageCar;
-    });
+      });
     }
   }
 
   void _getImageKey1() async {
     var _cameraPermission = await Permission.camera.status;
-    if(!_cameraPermission.isGranted){
+    if (!_cameraPermission.isGranted) {
       await Permission.camera.request();
     }
 
-    if(_cameraPermission.isGranted){
+    if (_cameraPermission.isGranted) {
       var _imageCar = await ImagePicker.pickImage(source: ImageSource.camera);
-    setState(() {
+      setState(() {
         _imageKeyPick1 = _imageCar;
-    });
+      });
     }
   }
 
   void _getImageKey2() async {
     var _cameraPermission = await Permission.camera.status;
-    if(!_cameraPermission.isGranted){
+    if (!_cameraPermission.isGranted) {
       await Permission.camera.request();
     }
 
-    if(_cameraPermission.isGranted){
+    if (_cameraPermission.isGranted) {
       var _imageCar = await ImagePicker.pickImage(source: ImageSource.camera);
-    setState(() {
+      setState(() {
         _imageKeyPick2 = _imageCar;
-    });
+      });
     }
   }
 
@@ -149,11 +153,11 @@ class GetCarDataState extends State<GetCarData>{
       body: Container(
         padding: EdgeInsets.only(left: 24.0, right: 24.0),
         child: Form(
-           key: _formKey,
-           autovalidateMode: AutovalidateMode.disabled,
-           child: ListView(
-             padding: EdgeInsets.all(20),
-             children: <Widget>[
+          key: _formKey,
+          autovalidateMode: AutovalidateMode.disabled,
+          child: ListView(
+            padding: EdgeInsets.all(20),
+            children: <Widget>[
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -161,116 +165,128 @@ class GetCarDataState extends State<GetCarData>{
                   Align(
                     alignment: Alignment.center,
                     child: Text("Datos de",
-                    style: TextStyle(fontSize: 30, color: ArgonColors.text)),
+                        style:
+                            TextStyle(fontSize: 30, color: ArgonColors.text)),
                   ),
                   Align(
                     alignment: Alignment.center,
                     child: Text("Cedula de ciudadania",
-                    style: TextStyle(fontSize: 24, color: ArgonColors.text)),
+                        style:
+                            TextStyle(fontSize: 24, color: ArgonColors.text)),
                   ),
                 ],
               ),
               SizedBox(height: 1),
               Divider(
-                  height: 40.0,
-                  thickness: 1.5,
-                  indent: 32.0,
-                  endIndent: 32.0,
+                height: 40.0,
+                thickness: 1.5,
+                indent: 32.0,
+                endIndent: 32.0,
               ),
-              SizedBox(height: 1),       
+              SizedBox(height: 1),
               Padding(
                 padding: const EdgeInsets.only(top: 16.0),
                 child: Input(
                   placeholder: "Nombre",
                   prefixIcon: Icon(Icons.account_circle_sharp),
+                  controller: _name,
                 ),
-              ), 
-              SizedBox(height: 15),       
+              ),
+              SizedBox(height: 15),
               Padding(
                 padding: const EdgeInsets.only(top: 16.0),
                 child: Input(
                   placeholder: "Número de identificación",
                   prefixIcon: Icon(Icons.badge_rounded),
+                  controller: _ID,
                 ),
-              ), 
-              SizedBox(height: 15),       
+              ),
+              SizedBox(height: 15),
               Padding(
                 padding: const EdgeInsets.only(top: 16.0),
                 child: Input(
                   placeholder: "Tipo de identificación",
                   prefixIcon: Icon(Icons.content_paste),
+                  controller: _IDType,
                 ),
-              ), 
+              ),
               SizedBox(height: 1),
               Divider(
-                  height: 40.0,
-                  thickness: 1.5,
-                  indent: 32.0,
-                  endIndent: 32.0,
+                height: 40.0,
+                thickness: 1.5,
+                indent: 32.0,
+                endIndent: 32.0,
               ),
-              SizedBox(height: 1), 
+              SizedBox(height: 1),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Align(
                     alignment: Alignment.center,
                     child: Text("Datos de",
-                    style: TextStyle(fontSize: 30, color: ArgonColors.text)),
+                        style:
+                            TextStyle(fontSize: 30, color: ArgonColors.text)),
                   ),
                   Align(
                     alignment: Alignment.center,
                     child: Text("Tarjeta de propiedad",
-                    style: TextStyle(fontSize: 24, color: ArgonColors.text)),
+                        style:
+                            TextStyle(fontSize: 24, color: ArgonColors.text)),
                   )
                 ],
               ),
               SizedBox(height: 1),
               Divider(
-                  height: 40.0,
-                  thickness: 1.5,
-                  indent: 32.0,
-                  endIndent: 32.0,
+                height: 40.0,
+                thickness: 1.5,
+                indent: 32.0,
+                endIndent: 32.0,
               ),
-              SizedBox(height: 1),    
+              SizedBox(height: 1),
               Padding(
                 padding: const EdgeInsets.only(top: 16.0),
                 child: Input(
                   placeholder: "Placa",
                   prefixIcon: Icon(Icons.pin_rounded),
+                  controller: _placa,
                 ),
-              ), 
-              SizedBox(height: 15),       
+              ),
+              SizedBox(height: 15),
               Padding(
                 padding: const EdgeInsets.only(top: 16.0),
                 child: Input(
                   placeholder: "VIN",
                   prefixIcon: Icon(Icons.directions_car_filled_rounded),
+                  controller: _VIN,
                 ),
-              ), 
-              SizedBox(height: 15),       
+              ),
+              SizedBox(height: 15),
               Padding(
                 padding: const EdgeInsets.only(top: 16.0),
                 child: Input(
                   placeholder: "Linea",
                   prefixIcon: Icon(Icons.poll_rounded),
+                  controller: _line,
                 ),
-              ), 
-              SizedBox(height: 15),       
+              ),
+              SizedBox(height: 15),
               Padding(
                 padding: const EdgeInsets.only(top: 16.0),
                 child: Input(
                   placeholder: "Modelo",
                   prefixIcon: Icon(Icons.calendar_today_rounded),
+                  controller: _model,
                 ),
-              ),  
-              SizedBox(height: 15),       
+              ),
+              SizedBox(height: 15),
               Padding(
                 padding: const EdgeInsets.only(top: 16.0),
                 child: Input(
                   placeholder: "Identificación",
                   prefixIcon: Icon(Icons.badge_rounded),
+                  controller: _IDcard,
                 ),
-              ), 
+              ),
               SizedBox(height: 15),
               Padding(
                 padding: const EdgeInsets.only(top: 16.0),
@@ -278,13 +294,13 @@ class GetCarDataState extends State<GetCarData>{
                   placeholder: "RFID llave",
                   prefixIcon: Icon(Icons.badge_rounded),
                 ),
-              ), 
+              ),
               SizedBox(height: 15),
               Align(
-                    alignment: Alignment.center,
-                    child: Text("Tomar fotos del vehiculo",
+                alignment: Alignment.center,
+                child: Text("Tomar fotos del vehiculo",
                     style: TextStyle(fontSize: 26, color: ArgonColors.text)),
-                  ),
+              ),
               SizedBox(height: 15),
               Container(
                 width: MediaQuery.of(context).size.width,
@@ -320,7 +336,6 @@ class GetCarDataState extends State<GetCarData>{
                                           color: ArgonColors.info,
                                           size: 26,
                                         ),
-                                        
                                       ],
                                     ),
                                   )
@@ -414,7 +429,6 @@ class GetCarDataState extends State<GetCarData>{
                                           color: ArgonColors.info,
                                           size: 26,
                                         ),
-                                        
                                       ],
                                     ),
                                   )
@@ -508,7 +522,6 @@ class GetCarDataState extends State<GetCarData>{
                                           color: ArgonColors.info,
                                           size: 26,
                                         ),
-                                        
                                       ],
                                     ),
                                   )
@@ -569,10 +582,10 @@ class GetCarDataState extends State<GetCarData>{
               ),
               SizedBox(height: 15),
               Align(
-                    alignment: Alignment.center,
-                    child: Text("Tomar fotos de la llave",
+                alignment: Alignment.center,
+                child: Text("Tomar fotos de la llave",
                     style: TextStyle(fontSize: 26, color: ArgonColors.text)),
-                  ),
+              ),
               SizedBox(height: 15),
               Container(
                 width: MediaQuery.of(context).size.width,
@@ -608,7 +621,6 @@ class GetCarDataState extends State<GetCarData>{
                                           color: ArgonColors.info,
                                           size: 26,
                                         ),
-                                        
                                       ],
                                     ),
                                   )
@@ -669,15 +681,14 @@ class GetCarDataState extends State<GetCarData>{
               ),
               SizedBox(height: 15),
               FlatButton(
-                    onPressed: (){},
-                    child: Text("Registrar"),
-                    color: ArgonColors.primary,
-                  ),
-             ],
-           ),  
+                onPressed: () {},
+                child: Text("Registrar"),
+                color: ArgonColors.primary,
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
-
-} 
+}

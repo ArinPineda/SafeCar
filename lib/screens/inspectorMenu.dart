@@ -1,10 +1,8 @@
 import 'package:argon_flutter/screens/getCarData.dart';
 import 'package:argon_flutter/screens/lostKey.dart';
-import 'package:argon_flutter/screens/searchCar.dart';
 import 'package:argon_flutter/widgets/bottom-app-bar-inspector.dart';
 import 'package:argon_flutter/widgets/navbar.dart';
 import 'package:flutter/material.dart';
-import 'package:argon_flutter/constants/Theme.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:qrscan/qrscan.dart';
 
@@ -14,16 +12,12 @@ class InspectorMenu extends StatefulWidget {
 }
 
 class InspectorMenuState extends State<InspectorMenu> {
-  
   TextEditingController _genericBarcode;
   double _margin = 3.0;
   int _selectIndex = 0;
   bool _showFab = true;
 
-  List<Widget> _widgetsOptions = [
-    GetCarData(),
-    LostKey()
-  ];
+  List<Widget> _widgetsOptions = [GetCarData(), LostKey()];
 
   void onChangedTap(int index) {
     setState(() {
@@ -45,7 +39,7 @@ class InspectorMenuState extends State<InspectorMenu> {
                 Navigator.pop(context);
                 if (type == "informacion") {
                   _getIDdocument();
-                } 
+                }
               },
             ),
             ListTile(
@@ -55,7 +49,7 @@ class InspectorMenuState extends State<InspectorMenu> {
                 Navigator.pop(context);
                 if (type == "informacion") {
                   _getPropietyCard();
-                } 
+                }
               },
             ),
           ],
@@ -64,53 +58,50 @@ class InspectorMenuState extends State<InspectorMenu> {
     );
   }
 
-  void _getIDdocument() async{
+  void _getIDdocument() async {
     _scan();
   }
 
-  void _getPropietyCard() async{
+  void _getPropietyCard() async {
     _scan();
   }
 
-   Future _scan() async {
+  Future _scan() async {
     var _cameraPermission = await Permission.camera.status;
-    if(!_cameraPermission.isGranted){
+    if (!_cameraPermission.isGranted) {
       await Permission.camera.request();
     }
 
-    if(_cameraPermission.isGranted){
+    if (_cameraPermission.isGranted) {
       String _BarCode = await scan();
       this._genericBarcode.text = _BarCode;
     }
-    
   }
 
   _onShowFabChanged(bool _showFab) {
-    
-    if(_selectIndex == 0){
-    setState(() {
-      _showFab = true;
-    });
+    if (_selectIndex == 0) {
+      setState(() {
+        _showFab = true;
+      });
     }
 
-    if(_selectIndex == 1){
-    setState(() {
-      _showFab = false;
-    });
+    if (_selectIndex == 1) {
+      setState(() {
+        _showFab = false;
+      });
     }
-     
+
     return _showFab;
   }
 
-  _showmargin(double _margin){
-
-    if(_selectIndex == 0) {
+  _showmargin(double _margin) {
+    if (_selectIndex == 0) {
       setState(() {
         _margin = 3.0;
       });
     }
 
-    if(_selectIndex == 1) {
+    if (_selectIndex == 1) {
       setState(() {
         _margin = -100;
       });
@@ -137,12 +128,11 @@ class InspectorMenuState extends State<InspectorMenu> {
         searchBar: true,
       ),
       body: _widgetsOptions[_selectIndex],
-      bottomNavigationBar:  BottomAppBarInspector(
+      bottomNavigationBar: BottomAppBarInspector(
         index: _selectIndex,
         onChangedTap: onChangedTap,
         margin: _showmargin(_margin),
       ),
     );
   }
-
 }

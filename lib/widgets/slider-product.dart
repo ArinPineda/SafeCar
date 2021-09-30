@@ -54,7 +54,7 @@ class _ProductCarouselState extends State<ProductCarousel> {
               ))
           .toList(),
       options: CarouselOptions(
-          height: 250,
+          height: 260,
           autoPlay: false,
           enlargeCenterPage: false,
           aspectRatio: 4 / 4,

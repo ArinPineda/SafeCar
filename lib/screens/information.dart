@@ -25,6 +25,15 @@ class InformationState extends State<Information> {
 
   TextEditingController _genericBarcode;
 
+  TextEditingController _name;
+  TextEditingController _ID;
+  TextEditingController _IDType;
+  TextEditingController _placa;
+  TextEditingController _VIN;
+  TextEditingController _line;
+  TextEditingController _model;
+  TextEditingController _IDcard;
+
   File _imageCarPick1 = null;
   File _imageCarPick2 = null;
   File _imageCarPick3 = null;
@@ -173,7 +182,7 @@ class InformationState extends State<Information> {
                 Navigator.pop(context);
                 if (type == "informacion") {
                   _getIDdocument();
-                } 
+                }
               },
             ),
             ListTile(
@@ -183,7 +192,7 @@ class InformationState extends State<Information> {
                 Navigator.pop(context);
                 if (type == "informacion") {
                   _getPropietyCard();
-                } 
+                }
               },
             ),
           ],
@@ -192,15 +201,13 @@ class InformationState extends State<Information> {
     );
   }
 
-  void _getIDdocument() async{
+  void _getIDdocument() async {
     _scan();
   }
 
-  void _getPropietyCard() async{
+  void _getPropietyCard() async {
     _scan();
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -219,10 +226,10 @@ class InformationState extends State<Information> {
             children: <Widget>[
               SizedBox(height: 15),
               FloatingActionButton.extended(
-                onPressed: () => _showModal("informacion"), 
+                onPressed: () => _showModal("informacion"),
                 label: Text("Escanear información"),
                 icon: Icon(Icons.camera),
-                ),
+              ),
               SizedBox(height: 1),
               Divider(
                 height: 40.0,
@@ -261,6 +268,7 @@ class InformationState extends State<Information> {
                 child: Input(
                   placeholder: "Nombre",
                   prefixIcon: Icon(Icons.account_circle_sharp),
+                  controller: _name,
                 ),
               ),
               SizedBox(height: 15),
@@ -269,16 +277,18 @@ class InformationState extends State<Information> {
                 child: Input(
                   placeholder: "Número de identificación",
                   prefixIcon: Icon(Icons.badge_rounded),
+                  controller: _ID,
                 ),
               ),
-              SizedBox(height: 15),       
+              SizedBox(height: 15),
               Padding(
                 padding: const EdgeInsets.only(top: 16.0),
                 child: Input(
                   placeholder: "Tipo de identificación",
                   prefixIcon: Icon(Icons.content_paste),
+                  controller: _IDType,
                 ),
-              ), 
+              ),
               SizedBox(height: 1),
               Divider(
                 height: 40.0,
@@ -317,6 +327,7 @@ class InformationState extends State<Information> {
                 child: Input(
                   placeholder: "Placa",
                   prefixIcon: Icon(Icons.pin_rounded),
+                  controller: _placa,
                 ),
               ),
               SizedBox(height: 15),
@@ -325,6 +336,7 @@ class InformationState extends State<Information> {
                 child: Input(
                   placeholder: "VIN",
                   prefixIcon: Icon(Icons.directions_car_filled_rounded),
+                  controller: _VIN,
                 ),
               ),
               SizedBox(height: 15),
@@ -333,6 +345,7 @@ class InformationState extends State<Information> {
                 child: Input(
                   placeholder: "Línea",
                   prefixIcon: Icon(Icons.poll_rounded),
+                  controller: _line,
                 ),
               ),
               SizedBox(height: 15),
@@ -341,14 +354,7 @@ class InformationState extends State<Information> {
                 child: Input(
                   placeholder: "Modelo",
                   prefixIcon: Icon(Icons.calendar_today_rounded),
-                ),
-              ),
-              SizedBox(height: 15),
-              Padding(
-                padding: const EdgeInsets.only(top: 16.0),
-                child: Input(
-                  placeholder: "Propietario",
-                  prefixIcon: Icon(Icons.portrait_rounded),
+                  controller: _model,
                 ),
               ),
               SizedBox(height: 15),
@@ -357,6 +363,7 @@ class InformationState extends State<Information> {
                 child: Input(
                   placeholder: "Identificación",
                   prefixIcon: Icon(Icons.badge_rounded),
+                  controller: _IDcard,
                 ),
               ),
               SizedBox(height: 15),

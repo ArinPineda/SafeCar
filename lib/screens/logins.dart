@@ -10,16 +10,14 @@ class LoginsPage extends StatefulWidget {
 
 class LoginsPageState extends State<LoginsPage> {
   int _selectIndex = 0;
-  List<Widget> _widgetsOptions = [
-    LoginInspector(),
-    LoginCliente()
-  ];
+  List<Widget> _widgetsOptions = [LoginInspector(), LoginCliente()];
 
   void _itemTapped(int index) {
     setState(() {
       _selectIndex = index;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,5 +39,4 @@ class LoginsPageState extends State<LoginsPage> {
       ),
     );
   }
-
 }
